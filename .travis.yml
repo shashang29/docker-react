@@ -7,4 +7,15 @@ before_install:
 
 script: 
   - docker run -e CI=true shashang/docker-react npm run test 
-  
+
+deploy:
+    provider: elasticbeanstalk
+    region: us-west-1
+    app: ss-web-server
+    env: Ss-web-server-env
+    bucket_name: elasticbeanstalk-us-west-1-549847039622
+    bucket_path: ss-web-server
+    on:
+      branch: main
+    access_key_id: $access_key
+    secret_access_key: "$secret_key"
