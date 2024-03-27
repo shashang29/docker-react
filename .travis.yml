@@ -11,10 +11,10 @@ script:
 deploy:
     provider: elasticbeanstalk
     region: us-west-1
-    app: ss-web-server
-    env: Ss-web-server-env
+    app: ss-docker
+    env: ss-docker-env
     bucket_name: elasticbeanstalk-us-west-1-549847039622
-    bucket_path: ss-web-server
+    bucket_path: ss-docker-env
     on:
       branch: main
     access_key_id: $access_key
